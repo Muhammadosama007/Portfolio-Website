@@ -12,19 +12,25 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '18'
 
-      - name: Install dependencies
-        run: npm install --save-dev htmlhint stylelint
+      - name: Install Dependencies
+        run: npm install htmlhint stylelint
 
-      - name: Lint HTML files
-        run: npx htmlhint "src/**/*.html"
+      - name: Fix Permissions
+        run: chmod +x node_modules/.bin/htmlhint
 
-      - name: Lint CSS files
-        run: npx stylelint "styles/**/*.css"
+      - name: Fix Permissions
+        run: chmod +x node_modules/.bin/stylelint
+
+      - name: Lint HTML
+        run: npx htmlhint src/**/*.html
+
+      - name: Lint CSS
+        run: npx stylelint styles/**/*.css
