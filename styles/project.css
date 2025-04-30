@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #FF9800;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: square;
+    margin: 20px;
+    padding: 0;
+  }
+  
